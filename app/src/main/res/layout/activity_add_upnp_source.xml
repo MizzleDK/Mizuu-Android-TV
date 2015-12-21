@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="48dp"
+        android:gravity="center|left">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_video_files_title"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/add_video_files_description"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="48dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_gravity="center">
+
+            <ListView
+                android:id="@+id/add_video_files_listview"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/no_devices_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_devices_found"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/update_devices_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_devices"
+            android:drawableStart="@drawable/refresh_rotate_drawable"
+            android:drawablePadding="8dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="center|bottom"/>
+
+    </FrameLayout>
+
+</LinearLayout>
