@@ -16,7 +16,6 @@
 
 package tv.mizuu.app;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,7 +24,6 @@ import android.content.ServiceConnection;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.fourthline.cling.android.AndroidUpnpService;
@@ -40,16 +38,10 @@ import org.fourthline.cling.registry.Registry;
 import org.fourthline.cling.support.contentdirectory.callback.Browse;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
-import org.fourthline.cling.support.model.container.Container;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-
-import io.realm.Realm;
-import io.realm.RealmResults;
-import tv.mizuu.app.realm.Filesource;
 
 /**
  * Created by Michell on 05-04-2015.
@@ -80,12 +72,13 @@ public class LibraryUpdateService extends Service {
     }
 
     private void loadFilesources() {
-        Realm realm = Realm.getInstance(this);
-        RealmResults<Filesource> results = realm.where(Filesource.class).findAll();
-        for (Filesource fs : results) {
-            mFilesources.add(fs);
-        }
-        realm.close();
+        // TODO Load file sources using something other than Realm
+        //Realm realm = Realm.getInstance(this);
+        //RealmResults<Filesource> results = realm.where(Filesource.class).findAll();
+        //for (Filesource fs : results) {
+        //    mFilesources.add(fs);
+        //}
+        //realm.close();
     }
 
     private void loadFilesFromFilesources() {

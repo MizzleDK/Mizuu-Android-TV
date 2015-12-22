@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package tv.mizuu.app.realm;
+package tv.mizuu.app;
 
-import io.realm.RealmObject;
-
-public class Filesource extends RealmObject {
+public class Filesource {
 
     private String filesourceName, folderName;
     private String deviceUdn, containerId;

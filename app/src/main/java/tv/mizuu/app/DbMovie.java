@@ -1,27 +1,23 @@
-package tv.mizuu.app.realm;
+package tv.mizuu.app;
 
 import java.util.Date;
+import java.util.List;
 
-import io.realm.RealmList;
-import io.realm.RealmObject;
-import io.realm.annotations.Index;
-import io.realm.annotations.PrimaryKey;
+import tv.mizuu.app.Filepath;
+import tv.mizuu.app.MovieCollection;
 
-public class Movie extends RealmObject {
+public class DbMovie {
 
-    @PrimaryKey
     private int id;
     private int rating, runtime;
 
-    @Index
     private String title;
 
-    @Index
     private String originalTitle;
 
     private String plot, tagline, imdbId;
     private Date release, added;
-    private RealmList<Filepath> filepaths;
+    private List<Filepath> filepaths;
     private MovieCollection collection;
     private boolean favorite, watchlist, watched;
 
@@ -118,11 +114,11 @@ public class Movie extends RealmObject {
         return release;
     }
 
-    public RealmList<Filepath> getFilepaths() {
+    public List<Filepath> getFilepaths() {
         return filepaths;
     }
 
-    public void setFilepaths(RealmList<Filepath> filepaths) {
+    public void setFilepaths(List<Filepath> filepaths) {
         this.filepaths = filepaths;
     }
 

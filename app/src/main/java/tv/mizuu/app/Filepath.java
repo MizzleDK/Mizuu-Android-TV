@@ -1,11 +1,7 @@
-package tv.mizuu.app.realm;
+package tv.mizuu.app;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
+public class Filepath {
 
-public class Filepath extends RealmObject {
-
-    @PrimaryKey
     private String filepath;
     private Filesource filesource;
 

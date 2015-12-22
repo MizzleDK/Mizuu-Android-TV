@@ -20,28 +20,25 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import io.realm.Realm;
-import tv.mizuu.app.realm.Filepath;
-
 public class MainActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Realm realm = Realm.getInstance(this);
-        long filepathCount = realm.where(Filepath.class).count();
-        realm.close();
+        //Realm realm = Realm.getInstance(this);
+        //long filepathCount = realm.where(Filepath.class).count();
+        //realm.close();
 
         // Check if there's any filepaths in the database
         // - if not, show the "Let's get started" screen.
-        if (filepathCount == 0) {
+        //if (filepathCount == 0) {
             startActivity(new Intent(this, AddUpnpSourceActivity.class));
 
             finish();
             return;
-        }
+        //}
 
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
     }
 }

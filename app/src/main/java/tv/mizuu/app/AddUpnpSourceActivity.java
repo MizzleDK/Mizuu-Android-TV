@@ -50,9 +50,6 @@ import org.seamless.util.logging.LoggingUtil;
 
 import java.util.HashMap;
 
-import io.realm.Realm;
-import tv.mizuu.app.realm.Filesource;
-
 import static tv.mizuu.app.AnimationUtils.animateTextViewTextChange;
 
 public class AddUpnpSourceActivity extends Activity {
@@ -210,37 +207,41 @@ public class AddUpnpSourceActivity extends Activity {
     }
 
     private boolean filesourceExists(Container container) {
-        Realm realm = Realm.getInstance(this);
-        long count = realm.where(Filesource.class)
-                .equalTo("containerId", container.getId())
-                .equalTo("deviceUdn", mSelectedDevice.getDevice().getIdentity().getUdn().toString())
-                .count();
-        realm.close();
+        //Realm realm = Realm.getInstance(this);
+        //long count = realm.where(Filesource.class)
+        //        .equalTo("containerId", container.getId())
+        //        .equalTo("deviceUdn", mSelectedDevice.getDevice().getIdentity().getUdn().toString())
+        //        .count();
+        //realm.close();
 
-        return count > 0;
+        //return count > 0;
+
+        // TODO implement this using something other than Realm
+        return false;
     }
 
     private void addFileSourceToDatabase(Container container) {
-        Realm realm = Realm.getInstance(this);
+        // TODO implement this using something other than Realm
+        //Realm realm = Realm.getInstance(this);
 
         // Create the file source
-        realm.beginTransaction();
+        //realm.beginTransaction();
 
-        Filesource filesource = realm.createObject(Filesource.class);
-        filesource.setContainerId(container.getId());
-        filesource.setFolderName(container.getTitle());
-        filesource.setDeviceUdn(mSelectedDevice.getDevice().getIdentity().getUdn().toString());
-        filesource.setFilesourceName(mSelectedDevice.toString());
+        //Filesource filesource = realm.createObject(Filesource.class);
+        //filesource.setContainerId(container.getId());
+        //filesource.setFolderName(container.getTitle());
+        //filesource.setDeviceUdn(mSelectedDevice.getDevice().getIdentity().getUdn().toString());
+        //filesource.setFilesourceName(mSelectedDevice.toString());
 
-        realm.commitTransaction();
+        //realm.commitTransaction();
 
         // Show success message
-        Toast.makeText(this, getString(R.string.added_file_source), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, getString(R.string.added_file_source), Toast.LENGTH_SHORT).show();
 
         // The user has added a file source, so we change the flag
-        mMadeChanges = true;
+        //mMadeChanges = true;
 
-        realm.close();
+        //realm.close();
     }
 
     private void browse(DeviceDisplay device, String id) {
